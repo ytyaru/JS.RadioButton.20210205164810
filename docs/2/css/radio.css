@@ -1,0 +1,51 @@
+@charset "utf-8";
+.Radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  overflow: hidden;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+.Radio + label {
+  display: inline-block;
+  position: relative;
+  padding-left: 1.25em;
+  cursor: pointer;
+}
+
+.Radio + label:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  margin: auto;
+  border: 1px solid #767676;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Radio:focus + label:before {
+  border-color: #1589ee;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #1589ee;
+}
+
+.Radio:checked + label:before {
+  border: 0;
+  background-image: url("../img/Radio_on.svg");
+}
+
+.Radio:disabled,
+.Radio + label[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
