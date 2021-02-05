@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ラジオボタンタグを作る。</title>
+    <link rel="stylesheet" href="./radio-button.css">
+    <script src="./src/parser/id/Unique.js"></script>
+    <script src="./src/parser/tag/Input.js"></script>
+    <script src="./src/parser/tag/Label.js"></script>
+    <script src="./src/parser/tag/Fieldset.js"></script>
+    <script src="./src/parser/bare.js"></script>
+    <script src="./src/parser/fieldset.js"></script>
+    <script src="./src/parser/ul.js"></script>
+    <script src="./src/parser/ParserFactory.js"></script>
+    <script src="./src/Color.js"></script>
+    <script src="./src/RadioButtonTag.js"></script>
+    <script src="./main.js"></script>
+</head>
+<body>
+<h1><a href="https://github.com/ytyaru/JS.RadioButton.20210205164810">ラジオボタンタグを作る。</a></h1>
+<radio-button id="sex1">
+    <option value="m">男</option>
+    <option value="f">女</option>
+</radio-button>
+<radio-button id="sex2" label="">
+    <option value="m">男</option>
+    <option value="f">女</option>
+</radio-button>
+<radio-button id="sex3" label="性別">
+    <option value="m">男</option>
+    <option value="f">女</option>
+</radio-button>
+<radio-button id="sex4" ul>
+    <option value="m">男</option>
+    <option value="f">女</option>
+</radio-button>
+<radio-button>
+    <option value="m">男</option>
+    <option value="f">女</option>
+</radio-button>
+<radio-button>
+    <option>男</option>
+    <option>女</option>
+</radio-button>
+<radio-button id="sex5">
+    <option value="m" name="male">男</option>
+    <option value="f" name="female">女</option>
+</radio-button>
+<radio-button id="sex6">
+    <option name="male">男</option>
+    <option name="female">女</option>
+</radio-button>
+<radio-button id="sex7">
+    <option value="m"></option>
+    <option value="f"></option>
+</radio-button>
+
+</body>
+</html>
