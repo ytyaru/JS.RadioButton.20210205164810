@@ -1,0 +1,118 @@
+@charset "utf-8";
+:root {
+    --rb-back-color: white;
+    --rb-fore-color: black;
+    --rb-hover-back-color: pink;
+    --rb-hover-fore-color: white;
+    --rb-checked-back-color: black;
+    --rb-checked-fore-color: white;
+    --rb-font-size:1.0em;
+}
+body {
+    background: var(--rb-back-color);
+    color: var(--rb-fore-color);
+    font-size: var(--rb-font-size);
+}
+input[type=radio] {
+    display: none; /* ラジオボタンを非表示にする */
+}
+input[type=radio] + label {
+        /*
+    background: var(--setting-color-bg);
+    color: var(--setting-color-fg);
+    border-color: var(--setting-color-fg);
+    font-size: calc(var(--default-LchColorWheel-wheelDiameter) - 13px);
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0 0px;
+        */
+    background: var(--rb-back-color);
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+ul li input[type=radio] + label {
+    border-width: 1px;
+    border-style: solid;
+}
+input[type=radio] + label:hover {
+    background: var(--rb-hover-back-color);
+    color: var(--rb-hover-fore-color);
+}
+input[type=radio]:checked + label {
+    background: var(--rb-checked-back-color);
+    color: var(--rb-checked-fore-color);
+}
+ul li:first-child label {
+    -moz-border-radius: 10px 0 0 10px;
+    -webkit-border-radius: 10px 0 0 10px;
+    border-radius: 50px 0 0 50px;
+    padding: 0px 0 0 4px;
+}
+ul li:last-child label {
+    border-left: 0;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    border-radius: 0 50px 50px 0;
+    padding: 0px 4px 0 0;
+}
+/* has()は2020-02-04 時点で未実装 https://developer.mozilla.org/ja/docs/Web/CSS/:has
+ul:has(li input[type="radio"]){
+    float: right;
+    font-size: 1.0em;
+    list-style:none;
+}
+*/
+/* 右寄せ
+ul {
+    float: right;
+    font-size: 1.0em;
+    list-style:none;
+}
+*/
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    font-size: calc(var(--default-LchColorWheel-wheelDiameter) - 16px);
+}
+/*
+div.dropdown-btn ul li:first-child label {
+    -moz-border-radius: 10px 0 0 10px;
+    -webkit-border-radius: 10px 0 0 10px;
+    border-radius: 10px 0 0 10px;
+}
+div.dropdown-btn ul li:last-child label {
+    border-left: 0;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;
+}
+div.dropdown-btn ul{
+    float: right;
+    font-size: 1.0em;
+    list-style:none;
+}
+div.dropdown-btn ul li{
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    font-size: calc(var(--default-LchColorWheel-wheelDiameter) - 16px);
+}
+*/
+
