@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/radio-button.css">
+    <title>ラジオボタンタグを作る。</title>
+    <script src="./src/parser/id/Unique.js"></script>
+    <script src="./src/parser/tag/Input.js"></script>
+    <script src="./src/parser/tag/Label.js"></script>
+    <script src="./src/parser/tag/Fieldset.js"></script>
+    <script src="./src/parser/bare.js"></script>
+    <script src="./src/parser/fieldset.js"></script>
+    <script src="./src/parser/ul.js"></script>
+    <script src="./src/parser/ParserFactory.js"></script>
+    <script src="./src/RadioButtonTag.js"></script>
+    <script src="./main.js"></script>
+</head>
+<body>
+<!-- https://www.tam-tam.co.jp/tipsnote/html_css/post13391.html -->
+<h1><a href="https://github.com/ytyaru/JS.RadioButton.20210205164810">ラジオボタンタグを作る。</a></h1>
+
+<radio-button id="fontSize">
+    <option value="small">小</option>
+    <option value="medium" selected>中</option>
+    <option value="large">大</option>
+</radio-button>
+<radio-button id="fontFamily">
+    <option value="serif" selected>明</option>
+    <option value="gothic">ゴ</option>
+</radio-button>
+<radio-button id="color">
+    <option value="white" selected>白</option>
+    <option value="black">黒</option>
+</radio-button>
+<radio-button id="writeDirection">
+    <option value="vertical" selected>縦</option>
+    <option value="horizontal">横</option>
+</radio-button>
+<br>
+<p>option要素のテキストノードがないときはvalue属性値をラベルにする。</p>
+<radio-button id="fontSizeNotTextNode">
+    <option value="small"></option>
+    <option value="medium"></option>
+    <option value="large"></option>
+</radio-button>
+
+<br>
+<ul>
+    <li>ラジオボタングループでないリスト</li>
+    <li>ラジオボタングループでないリスト</li>
+</ul>
+
+</body>
+</html>
