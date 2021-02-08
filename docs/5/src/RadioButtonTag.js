@@ -22,8 +22,4 @@ class RadioButtonTag {
             el.removeEventListener('change', func, options);
         }
     }
-    static setMainColor(color) {
-        console.log(color);
-        Color.setMainColor(color);
-    }
 }
