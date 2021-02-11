@@ -14,23 +14,17 @@ class Option { // <option>またはvalue属性値からinput要素とlabel要素
     }
     static #jadgeNotation(radio) { // 選択肢を指定する記法はどれか判断する。<option>またはvalue属性値のどれか。
         const options = radio.querySelectorAll('option');
-        if (0 < options.length ) {
-            return {
-                values: options, 
-                input: InputFromOptionElement, 
-                label: LabelFromOptionElement, 
-                unique: UniqueIdFromOptionElement
-            };
-        }
+        if (0 < options.length ) { return Option.#getNotation(options, 'OptionElement'); }
         const values = radio.getAttribute('value').split(' ');
-        if (0 < values.length ) {
-            return {
-                values: values, 
-                input: InputFromValueAttribute, 
-                label: LabelFromValueAttribute, 
-                unique: UniqueIdFromValueAttribute
-            };
-        }
+        if (0 < values.length ) { return Option.#getNotation(values, 'ValueAttribute'); }
         throw new Error('<radio-button>には選択肢が必要です。<option>かvalue属性値で選択肢を指定してください。');
+    }
+    static #getNotation(values, name) {
+        return {
+            values: values, 
+            input: Class.get(`InputFrom${name}`), 
+            label: Class.get(`LabelFrom${name}`), 
+            unique: Class.get(`UniqueIdFrom${name}`),
+        };
     }
 }
