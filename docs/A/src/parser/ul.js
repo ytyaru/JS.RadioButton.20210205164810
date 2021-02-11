@@ -15,6 +15,15 @@ class UlRadio {
         return ul;
     }
     static #createOptions(radio, ul) {
+        const inputLabels = Option.create(radio); 
+        for (let inputLabel of inputLabels) {
+            const li = document.createElement('li');
+            for (let element of inputLabel) {
+                li.appendChild(element);
+            }
+            ul.appendChild(li);
+        }
+        /*
         const options = radio.querySelectorAll('option');
         const input_name = Unique.getInputName(radio);
         for (let option of options) {
@@ -24,5 +33,6 @@ class UlRadio {
             li.appendChild(Label.create(radio, option, input_id));
             ul.appendChild(li);
         }
+        */
     }
 }

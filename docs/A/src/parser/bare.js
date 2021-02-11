@@ -3,6 +3,13 @@
 //import Label from './tag/Label.js';
 class BareRadio {
     static create(radio) {
+        const inputLabels = Option.create(radio); 
+        for (let inputLabel of inputLabels) {
+            for (let element of inputLabel) {
+                radio.parentNode.insertBefore(element, radio);
+            }
+        }
+        /*
         const options = radio.querySelectorAll('option');
         const input_name = Unique.getInputName(radio);
         for (let option of options) {
@@ -10,6 +17,7 @@ class BareRadio {
             radio.parentNode.insertBefore(Input.create(radio, option, input_name, input_id), radio);
             radio.parentNode.insertBefore(Label.create(radio, option, input_id), radio);
         }
+        */
         radio.remove();
     }
 }
