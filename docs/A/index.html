@@ -47,12 +47,29 @@
     <option value="medium"></option>
     <option value="large"></option>
 </radio-button>
+<br>
+<p>option要素にname属性値があるときはvalue属性値より優先してidに利用する。</p>
+<radio-button id="fontSizeNameAttr1">
+    <option name="small" value="小"></option>
+    <option name="medium" value="中" selected></option>
+    <option name="large" value="大"></option>
+</radio-button>
+<br>
+<p>option要素の閉じタグを省略するとラベルが表示されないバグを修正した。optionのvalue属性値を表示する。</p>
+<radio-button id="fontSizeNameAttr2">
+    <option name="small" value="小" />
+    <option name="medium" value="中" selected />
+    <option name="large" value="大" />
+</radio-button>
+
 
 <br>
 <ul>
     <li>ラジオボタングループでないリスト</li>
     <li>ラジオボタングループでないリスト</li>
 </ul>
+
+<radio-button id="fontSizeValueAttr" value="small medium large" />
 
 </body>
 </html>

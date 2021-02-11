@@ -11,10 +11,10 @@ class RadioButtonTag {
     }
     static #parse() {
         const radios = document.querySelectorAll(RadioButtonTag.#ELEMENT_NAME);
-        console.log(radios );
+        console.log(radios);
         for (let radio of radios) {
             console.log(radio);
-            ParserFactory.create(radio).create(radio);
+            ParserFactory.get(radio).create(radio);
         }
     }
     // 指定した<radio>のid属性値をもつ<input>に対して、指定したfuncを'change'イベントとして実装する
