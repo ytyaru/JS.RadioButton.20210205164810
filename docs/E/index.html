@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/radio-button.css">
+    <title>ラジオボタンタグを作る。</title>
+    <script src="./src/parser/common/Class.js"></script>
+    <script src="./src/parser/id/Unique.js"></script>
+    <script src="./src/parser/id/UniqueName.js"></script>
+    <script src="./src/parser/id/UniqueIdFromValueAttribute.js"></script>
+    <script src="./src/parser/id/UniqueIdFromOptionElement.js"></script>
+    <script src="./src/parser/tag/LabelFromValueAttribute.js"></script>
+    <script src="./src/parser/tag/LabelFromOptionElement.js"></script>
+    <script src="./src/parser/tag/InputFromValueAttribute.js"></script>
+    <script src="./src/parser/tag/InputFromOptionElement.js"></script>
+    <script src="./src/parser/tag/Fieldset.js"></script>
+    <script src="./src/parser/Option.js"></script>
+    <script src="./src/parser/BareRadioButton.js"></script>
+    <script src="./src/parser/FieldsetRadioButton.js"></script>
+    <script src="./src/parser/UlRadioButton.js"></script>
+    <script src="./src/parser/RadioButtonFactory.js"></script>
+    <script src="./src/RadioButtonTag.js"></script>
+    <script src="./main.js"></script>
+</head>
+<body>
+<!-- https://www.tam-tam.co.jp/tipsnote/html_css/post13391.html -->
+<h1><a href="https://github.com/ytyaru/JS.RadioButton.20210205164810">ラジオボタンタグを作る。</a></h1>
+
+<radio-button id="fontSize">
+    <option value="small">小</option>
+    <option value="medium" selected>中</option>
+    <option value="large">大</option>
+</radio-button>
+<radio-button id="fontFamily">
+    <option value="serif" selected>明</option>
+    <option value="gothic">ゴ</option>
+</radio-button>
+<radio-button id="color">
+    <option value="white" selected>白</option>
+    <option value="black">黒</option>
+</radio-button>
+<radio-button id="writeDirection">
+    <option value="vertical" selected>縦</option>
+    <option value="horizontal">横</option>
+</radio-button>
+<br>
+
+<radio-button id="fontSize" value="small medium large"></radio-button>
+<radio-button id="fontFamily" value="serif gothic"></radio-button>
+<radio-button id="color" value="white black"></radio-button>
+<radio-button id="writeDirection" value="vertical horizontal"></radio-button>
+<br>
+
+<p>&lt;radio-button&gt;で閉じタグを省略できない。XHTMLだと&lt;radio-button /&gt;で閉じタグを省略できる。だが、HTML未定義タグの自作タグでは閉じタグを省略できないようだ。省略すると閉じられていないものとして解釈され、以降すべて子要素と判断されてしまう。</p>
+
+<!--
+<radio-button id="fontSize-1" value="small medium large" />
+<radio-button id="fontFamily-1" value="serif gothic" />
+<radio-button id="color-1" value="white black" />
+<radio-button id="writeDirection-1" value="vertical horizontal" />
+<br>
+
+<radio-button id="fontSize-2" value="small medium large">
+<radio-button id="fontFamily-2" value="serif gothic">
+<radio-button id="color-2" value="white black">
+<radio-button id="writeDirection-2" value="vertical horizontal">
+<br>
+-->
+
+<p>option要素のテキストノードがないときはvalue属性値をラベルにする。</p>
+<radio-button id="fontSizeNotTextNode">
+    <option value="small"></option>
+    <option value="medium"></option>
+    <option value="large"></option>
+</radio-button>
+<br>
+<p>option要素にname属性値があるときはvalue属性値より優先してidに利用する。</p>
+<radio-button id="fontSizeNameAttr1">
+    <option name="small" value="小"></option>
+    <option name="medium" value="中" selected></option>
+    <option name="large" value="大"></option>
+</radio-button>
+<br>
+<p>option要素の閉じタグを省略するとラベルが表示されないバグを修正した。optionのvalue属性値を表示する。</p>
+<radio-button id="fontSizeNameAttr2">
+    <option name="small" value="小" />
+    <option name="medium" value="中" selected />
+    <option name="large" value="大" />
+</radio-button>
+
+
+<br>
+<ul>
+    <li>ラジオボタングループでないリスト</li>
+    <li>ラジオボタングループでないリスト</li>
+</ul>
+
+<radio-button id="fontSizeValueAttr" value="small medium large" />
+
+</body>
+</html>
